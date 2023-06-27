@@ -142,17 +142,6 @@ public:
         return minimumSpanningTree;
     }
 
-    void displayCityModel() {
-        for (const auto& city : cities) {
-            cout << "City: " << city.first << endl;
-            cout << "Neighbors: ";
-            for (const auto& neighbor : city.second.neighbors) {
-                cout << neighbor.first << "(" << neighbor.second << ") ";
-            }
-            cout << endl;
-        }
-    }
-
     void displayCityMap() {
         for (const auto& city : cities) {
             cout << "City: " << city.first << endl;
