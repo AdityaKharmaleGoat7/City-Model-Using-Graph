@@ -31,6 +31,9 @@ public:
         cities[city2].neighbors[city1] = weight;
     }
 
+    /*
+    The findShortestPath function uses Dijkstra's algorithm to find the shortest path between two cities.
+    */
     vector<string> findShortestPath(const string& startCity, const string& endCity) {
         unordered_map<string, string> parent; // To store the parent of each city in the shortest path
         unordered_map<string, int> distance; // To store the shortest distance from startCity to each city
@@ -73,7 +76,11 @@ public:
 
         return shortestPath;
     }
-
+    
+    /*
+    The findBridges function finds all the bridges in the city model.
+    uses a modified version of Depth-First Search (DFS) algorithm to identify the bridges.
+    */
     vector<vector<string>> findBridges() {
         vector<vector<string>> bridges;
         unordered_map<string, int> discovery; // Time of first discovery for each city
@@ -96,6 +103,11 @@ public:
         return bridges;
     }
 
+    /*
+    function finds the minimum spanning tree of the city model.
+    A minimum spanning tree is a subgraph that connects all the cities with theminimum total edge weight. 
+    It uses Kruskal's algorithm to find the minimum spanning tree.
+    */
     vector<vector<string>> findMinimumSpanningTree() {
         vector<vector<string>> minimumSpanningTree;
         vector<pair<int, pair<string, string>>> edges;
@@ -186,6 +198,7 @@ private:
         return parent[city];
     }
 };
+
 
 int main() {
     CityModel cityModel;
@@ -279,6 +292,6 @@ int main() {
 
         cout << endl;
     }
-
+    
     return 0;
 }
